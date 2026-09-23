@@ -1,11 +1,11 @@
 # PL/SQL Assignment One: Sunrise Supermarket Sales Analysis
 
 ## Student Details
-* **Student Name:** [Your Name Here]
-* **Student ID:** [Your Student ID Here]
+* **Student Name:** UDAHEMUKA Manzi Lin Shalom
+* **Student ID:** 20251SEN193
 * **Instructor:** Eric Maniraguha
 * **TA:** Afanyu Emmanuel
-* **DBMS Tool Used:** Oracle SQL / Live SQL (Standard ANSI SQL Syntax)
+* **DBMS Tool Used:** Oracle SQL
 
 ---
 
