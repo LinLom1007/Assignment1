@@ -27,7 +27,7 @@ FROM orders o
 INNER JOIN customers c ON o.customer_id = c.customer_id
 ORDER BY o.order_id;
 ```
-
+![Query-1 result](https://github.com/LinLom1007/Assignment1/blob/00d57a27c7c4990037e71ddf3d55183cef786f9f/1.png)
 
 ### Query 2: Product Breakdown Per Line Item
 * **Business Purpose:** Extracts granular inventory sales movement metrics by evaluating quantities ordered against product classifications.
@@ -38,6 +38,7 @@ FROM order_items oi
 INNER JOIN products p ON oi.product_id = p.product_id
 ORDER BY oi.order_id;
 ```
+![Query-2 results](https://github.com/LinLom1007/Assignment1/blob/00d57a27c7c4990037e71ddf3d55183cef786f9f/2.png)
 
 ### Query 3: Comprehensive Customer Interaction Profile
 * **Business Purpose:** Includes inactive accounts or churned clients who have registered but never placed an order, highlighting marketing re-engagement opportunities.
@@ -48,6 +49,7 @@ FROM customers c
 LEFT JOIN orders o ON c.customer_id = o.customer_id
 ORDER BY c.customer_id;
 ```
+![Query-3 results](https://github.com/LinLom1007/Assignment1/blob/00d57a27c7c4990037e71ddf3d55183cef786f9f/3.png)
 
 ### Query 4: High-Value Customer Identification (Above Average Spend)
 * **Business Purpose:** Uses a Common Table Expression (CTE) to isolate top-tier consumers contributing total revenue greater than the mean platform benchmark.
@@ -65,7 +67,7 @@ FROM customer_spend cs
 JOIN customers c ON cs.customer_id = c.customer_id
 WHERE cs.total_spent > (SELECT AVG(total_spent) FROM customer_spend);
 ```
-
+![Query-4 results](https://github.com/LinLom1007/Assignment1/blob/00d57a27c7c4990037e71ddf3d55183cef786f9f/4.png)
 ### Query 5: Financial Contribution Ranking
 * **Business Purpose:** Ranks the customer base strictly by financial volume generated to prioritize rewards for VIP clientele.
 * **SQL Query:**
@@ -78,7 +80,7 @@ JOIN order_items oi ON o.order_id = oi.order_id
 JOIN products p ON oi.product_id = p.product_id
 GROUP BY c.customer_name;
 ```
-
+![Query-5 results](https://github.com/LinLom1007/Assignment1/blob/00d57a27c7c4990037e71ddf3d55183cef786f9f/5.png)
 ### Query 6: Sequential Order Indexing
 * **Business Purpose:** Tracks individual customer paths by chronologically numbering their orders to monitor loyalty milestones.
 * **SQL Query:**
@@ -88,7 +90,7 @@ SELECT c.customer_name, o.order_id, o.order_date,
 FROM customers c
 JOIN orders o ON c.customer_id = o.customer_id;
 ```
-
+![Query-6 results](https://github.com/LinLom1007/Assignment1/blob/00d57a27c7c4990037e71ddf3d55183cef786f9f/6.png)
 ### Query 7: Continuous Running Revenue Track
 * **Business Purpose:** Provides a running calculation of cumulative daily revenue to map financial scaling and trend velocity.
 * **SQL Query:**
@@ -105,7 +107,7 @@ SELECT order_date, daily_sales,
 FROM daily_revenue
 ORDER BY order_date;
 ```
-
+![Query-7 results](https://github.com/LinLom1007/Assignment1/blob/00d57a27c7c4990037e71ddf3d55183cef786f9f/7.png)
 ### Query 8: Purchase Interval Velocity Analysis
 * **Business Purpose:** Measures customer retention metrics by checking how many days pass before a customer returns to place another order.
 * **SQL Query:**
@@ -115,8 +117,8 @@ SELECT c.customer_name, o.order_id, o.order_date,
 FROM customers c
 JOIN orders o ON c.customer_id = o.customer_id;
 ```
+![Query-8 results](https://github.com/LinLom1007/Assignment1/blob/00d57a27c7c4990037e71ddf3d55183cef786f9f/8.png)
 
----
 
 ## 3. Business Interpretation & Insights
 
